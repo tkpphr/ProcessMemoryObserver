@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./manual.css">
+    <script src="./manual.js" type="text/javascript"></script>
+    <script>
+        window.addEventListener("load", function () {
+            var contents = {
+                "default": {
+                    "manual": "Manual",
+                    "notices": "Third Party Licenses",
+                    "top_to": "↑Top",
+                    "overview": "Overview",
+                    "system": "System Requirements",
+                    "usage": "Usage",
+                    "screen": "Screen",
+                    "procedure": "Procedure",
+                    "license": "License",
+                    "contact": "Contact",
+                    "overview_desc": `<p>This application observes the value of memory address that the selected process has.</p>
+                                    <p>You can use the feature that is recording log and text-to-speech notification.</p>
+                                    <p>This application do not have the feature that searches memory addresses. You need to prepare for a tool that can search memory addresses.</p>`,
+                    "system_desc": `Microsoft Windows 7 SP1 or later and <a href=\"https://www.microsoft.com/en-US/download/details.aspx?id=42643\" target=\"_blank\">.NET Framework 4.5.2 Runtime</a>`,
+                    "menu_bar": "Menubar",
+                    "manager_buttons": "Manager Buttons",
+                    "file": "File",
+                    "add_observers": "Add Observers From File",
+                    "add_observers_desc": "Add observers from saved file.",
+                    "save_observers": "Save Observers To File",
+                    "save_observers_desc": "Save all observers to file.",
+                    "recent": "Recent Files",
+                    "recent_desc": "Select a recent file.",
+                    "exit": "Exit",
+                    "exit_desc": "Exit this application.",
+                    "tool": "Tool",
+                    "option": "Option",
+                    "option_desc": `<p>Display option dialog.</p>
+                                    <p>It can set the text-to-speech settings.</p>
+                                    <p>"Voice" select the voice type.</p>
+                                    <p>"Rate" change the speed.</p>
+                                    <p>"Volume" change the volume.</p>`,
+                    "help": "Help",
+                    "manual_desc": "Open this manual.",
+                    "about": "About",
+                    "about_desc": "Display about dialog.",
+                    "process": "Process",
+                    "process_info": "Process Information",
+                    "process_info_desc": "Display the information of the selected process. If process is not selected, The following message will be displayed:<strong>Process is not selected.</strong>.",
+                    "select_process": "Select Process",
+                    "select_process_desc": "Select a process from dialog.",
+                    "add": "Add",
+                    "add_desc": "Add a new observer.",
+                    "remove": "Remove",
+                    "remove_desc": "Remove the selected observer. If observer does not exists, the button will be disabled.",
+                    "start_all": "Start All",
+                    "start_all_desc": "Start observing for all observers.",
+                    "stop_all": "Stop All",
+                    "stop_all_desc": "Stop observing for all observers.",
+                    "stop_speech": "Stop Speech",
+                    "stop_speech_desc": "Stop all text-to-speech.",
+                    "observer_list": "Observer List",
+                    "observer_list_desc": "<p>Display the observer list. You can select a observer from tabs.</p><p>If observer does not exist, the following message will be displayed:<strong>Observer does not exist.</strong>.</p>",
+                    "start": "Start",
+                    "start_desc": "<p>Start observing the captured area.</p><p>Every update interval, the value of memory address will be read.</p><p>\"Stop\" button will be enabled.</p>",
+                    "stop": "Stop",
+                    "stop_desc": "Stop observing the captured area. \"Start\" button will be enabled. ",
+                    "speech_notification": "Speech Notification",
+                    "speech_notification_desc": "Toggle enabling text-to-speech notification or not.",
+                    "title": "Title",
+                    "title_desc": "Edit the title. It will be read out when text-to-speech notication.",
+                    "address": "Address",
+                    "address_desc": "Enter a memory address. Max 16-digits.",
+                    "value_type": "Value Type",
+                    "value_type_desc": "Select a value type that is read from a memory address.",
+                    "read_size": "Read Size",
+                    "read_size_desc": "If value type is \"Text\", you can set read size from 1byte to 64bytes.",
+                    "update_interval": "Update Interval",
+                    "update_interval_desc": "Set the update interval from 10 to 9999 seconds for observer.",
+                    "log": "Log",
+                    "log_desc": `<p>Display a log.</p>
+                                <p>"Save" button can save a log.</p>
+                                <p>"Clear" button can clear a log.</p>`,
+                    "procedure_1_1": "Click \"Select Process\" button.",
+                    "procedure_1_2": "Select a process then double-click it.",
+                    "procedure_2": "Add a observer by \"Add\" button.",
+                    "procedure_3": "Enter a memory address that you want to observe.",
+                    "procedure_4": "Set the title etc.",
+                    "procedure_5": "Start obsering by \"Start\" button.",
+                    "procedure_6": "Stop obsering by \"Stop\" button.",
+                    "license_desc": `<p>This application sources are published at <a href="https://github.com/tkpphr/ScreenNumericObserver">Github</a>.</p>
+                                     <p>This application licence is Apache 2.0 License.</p>
+                                     <p>See details at "LICENSE.txt".</p>
+                                     <p>This application uses third-party resources.</p>
+                                     <p>See details at <a href="notices.html">here</a>.</p>`
+                },
+                "ja": {
+                    "manual": "マニュアル",
+                    "notices": "サードパーティライセンス",
+                    "top_to": "↑トップ",
+                    "overview": "概要",
+                    "system": "動作環境",
+                    "usage": "利用方法",
+                    "screen": "画面説明",
+                    "procedure": "操作手順",
+                    "license": "ライセンス",
+                    "contact": "連絡先",
+                    "overview_desc": `<p>このアプリケーションは選択したプロセスのメモリアドレスの値を監視します。</p>
+                                    <p>ログの記録と音声読み上げ通知の機能が利用できます。</p>
+                                    <p>メモリアドレスをサーチする機能は実装していないので別途でツールを用意する必要があります。</p>`,
+                    "system_desc": `Microsoft Windows 7 SP1またはそれ以降のMicrosoft Windows及び<a href=\"https://www.microsoft.com/ja-JP/download/details.aspx?id=42643\" target=\"_blank\">.NET Framework 4.5.2 Runtime</a>`,
+                    "menu_bar": "メニューバー",
+                    "manager_buttons": "管理ボタン",
+                    "file": "ファイル",
+                    "add_observers": "ファイルからオブザーバーを追加",
+                    "add_observers_desc": "ファイルから保存したオブザーバーを追加します。",
+                    "save_observers": "オブザーバーをファイルに保存",
+                    "save_observers_desc": "すべてのオブザーバーをファイルに保存します。",
+                    "recent": "最近使ったファイル",
+                    "recent_desc": "最近使ったファイルを選択します。",
+                    "exit": "終了",
+                    "exit_desc": "アプリケーションを終了します。",
+                    "tool": "ツール",
+                    "option": "オプション",
+                    "option_desc": `<p>オプションを表示します。</p>
+                                    <p>音声読み上げの設定を行うことができます。</p>
+                                    <p>「音声」では、読み上げに使用する音声を選択します。</p>
+                                    <p>「レート」では、読み上げの速度を変更します。</p>
+                                    <p>「音量」では、読み上げの音量を変更します。</p>`,
+                    "help": "ヘルプ",
+                    "manual_desc": "本マニュアルを表示します。",
+                    "about": "バージョン情報",
+                    "about_desc": "バージョン情報を表示します。",
+                    "process": "プロセス",
+                    "process_info": "プロセス情報",
+                    "process_info_desc": "選択されているプロセスの情報を表示します。選択されていない場合は、<strong>プロセスが選択されていません。</strong>を表示されます。",
+                    "select_process": "プロセス選択",
+                    "select_process_desc": "ダイアログからプロセスを選択します。",
+                    "add": "追加",
+                    "add_desc": "オブザーバーを新規追加します。",
+                    "remove": "削除",
+                    "remove_desc": "選択されているオブザーバーを削除します。オブザーバーがない場合は無効になっています。",
+                    "start_all": "一括開始",
+                    "start_all_desc": "すべてのオブザーバーで監視を開始します。",
+                    "stop_all": "一括停止",
+                    "stop_all_desc": "監視中のオブザーバーをすべて停止します。",
+                    "stop_speech": "音声を停止",
+                    "stop_speech_desc": "音声読み上げをすべて停止します。",
+                    "observer_list": "オブザーバー一覧",
+                    "observer_list_desc": "<p>オブザーバーの一覧を表示します。タブでオブザーバーを選択します。</p><p>オブザーバーがない場合は、<strong>オブザーバーがありません。</strong>と表示されます。</p>",
+                    "start": "開始",
+                    "start_desc": "<p>監視を開始します。</p><p>更新間隔毎にメモリアドレスの値の読取が行われます。</p><p>「停止」ボタンが有効になります。</p>",
+                    "stop": "停止",
+                    "stop_desc": "監視を停止します。「開始」ボタンが有効になります。",
+                    "speech_notification": "音声通知",
+                    "speech_notification_desc": "音声読み上げによる通知をするかどうかを切り替えます。",
+                    "title": "タイトル",
+                    "title_desc": "オブザーバーのタイトルを編集します。編集すると音声通知時にこのタイトルが読み上げられます。",
+                    "address": "アドレス",
+                    "address_desc": "メモリアドレスを入力します。最大16桁まで入力可能です。",
+                    "value_type": "読込値",
+                    "value_type_desc": "アドレスから読み込む値のタイプを選択します。",
+                    "read_size": "読込サイズ",
+                    "read_size_desc": "読込値が文字列の場合に1～64バイトの範囲で読み込むのかを設定します。",
+                    "update_interval": "更新間隔",
+                    "update_interval_desc": "監視の更新を行う間隔を10秒～9999秒の範囲で指定します。",
+                    "log": "ログ",
+                    "log_desc": `<p>監視ログを表示します。</p>
+                                <p>「保存」ボタンで表示されているログを保存できます。</p>
+                                <p>「消去」ボタンで表示されているログを消去できます。</p>`,
+                    "procedure_1_1": "「プロセス選択」ボタンからプロセスの選択をします。",
+                    "procedure_1_2": "監視するプロセスを選択してダブルクリックします。",
+                    "procedure_2": "「追加」ボタンからオブザーバーを追加します。",
+                    "procedure_3": "監視するメモリアドレスを入力します。",
+                    "procedure_4": "タイトルや更新間隔などを設定します。",
+                    "procedure_5": "「開始」ボタンで監視を開始します。",
+                    "procedure_6": "「停止」ボタンで監視を停止します。",
+                    "license_desc": `<p>このアプリケーションのソースは、<a href="https://github.com/tkpphr/ProcessMamoryObserver">Github</a>にて公開しています。</p>
+                                     <p>このアプリケーションのライセンスは、Apache 2.0 Licenseです。</p>
+                                     <p>詳しくは同梱のLICENSE.txtをご覧ください。</p>
+                                     <p>このアプリケーションは、サードパーティ製の成果物を使用しています。</p>
+                                     <p>詳しくは<a href="notices.html">こちら</a>をご覧ください。</p>`
+                }
+            };
+            document.title = "Screen Numeric Observer - " + contents[getLanguage()]["manual"];
+            localizeContents(contents);
+            localizeImages(["ja"]);
+            document.getElementById("screen_image").addEventListener("load", function (e) {
+                var img = e.currentTarget;
+                var clipRects = {
+                    "menu_bar": {
+                        name: {
+                            "default": contents["default"]["menu_bar"],
+                            "ja": contents["ja"]["menu_bar"]
+                        },
+                        x: 10, y: 32, width: 560, height: 22
+                    },
+                    "process": {
+                        name: {
+                            "default": contents["default"]["process"],
+                            "ja": contents["ja"]["process"]
+                        },
+                        x: 10, y: 54, width: 560, height: 65
+                    },
+                    "manager_buttons": {
+                        name: {
+                            "default": contents["default"]["manager_buttons"],
+                            "ja": contents["ja"]["manager_buttons"]
+                        },
+                        x: 10, y: 119, width: 560, height: 35
+                    },
+                    "observer_list": {
+                        name: {
+                            "default": contents["default"]["observer_list"],
+                            "ja": contents["ja"]["observer_list"]
+                        },
+                        x: 10, y: 154, width: 560, height: 305
+                    },
+                };
+                drawNavigationCanvas(img, document.getElementById("screen_canvas"), clipRects, function (key, clipRect) { jumpToURL("#" + key); });
+                Object.keys(clipRects).forEach(function (key) {
+                    drawClippedImage(img, document.getElementById(key + "_canvas"), clipRects[key]);
+                });
+                drawClippedImage(img, document.getElementById("process_info_canvas"), { x: 10, y: 54, width: 440, height: 65 });
+                drawClippedImage(img, document.getElementById("select_process_canvas"), { x: 465, y: 54, width: 105, height: 65 });
+                drawClippedImage(img, document.getElementById("start_canvas"), { x: 20, y: 205, width: 80, height: 26 });
+                drawClippedImage(img, document.getElementById("stop_canvas"), { x: 118, y: 205, width: 80, height: 26 });
+                drawClippedImage(img, document.getElementById("speech_notification_canvas"), { x: 20, y: 231, width: 150, height: 24 });
+                drawClippedImage(img, document.getElementById("title_canvas"), { x: 20, y: 255, width: 215, height: 30 });
+                drawClippedImage(img, document.getElementById("address_canvas"), { x: 20, y: 285, width: 215, height: 30 });
+                drawClippedImage(img, document.getElementById("value_type_canvas"), { x: 20, y: 315, width: 215, height: 30 });
+                drawClippedImage(img, document.getElementById("read_size_canvas"), { x: 20, y: 345, width: 120, height: 30 });
+                drawClippedImage(img, document.getElementById("update_interval_canvas"), { x: 20, y: 375, width: 125, height: 30 });
+                drawClippedImage(img, document.getElementById("log_canvas"), { x: 230, y: 190, width: 330, height: 260 });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="top-menu">
+                <img class="logo" src="favicon.ico">
+                <a class="selected" href="manual.html" data-localize-content="manual"></a>
+                <a href="notices.html" data-localize-content="notices"></a>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="side-bar">
+                <ul>
+                    <li><a href="#overview" data-localize-content="overview"></a></li>
+                    <li><a href="#system" data-localize-content="system"></a></li>
+                    <li>
+                        <a href="#usage" data-localize-content="usage"></a>
+                        <ul>
+                            <li>
+                                <a href="#screen" data-localize-content="screen"></a>
+                                <ul>
+                                    <li><a href="#menu_bar" data-localize-content="menu_bar"></a></li>
+                                    <li><a href="#process" data-localize-content="process"></a></li>
+                                    <li><a href="#manager_buttons" data-localize-content="manager_buttons"></a></li>
+                                    <li><a href="#observer_list" data-localize-content="observer_list"></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#procedure" data-localize-content="procedure"></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact" data-localize-content="contact"></a></li>
+                    <li><a href="#license" data-localize-content="license"></a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <section id="overview">
+                    <h1 data-localize-content="overview"></h1>
+                    <hr>
+                    <div data-localize-content="overview_desc"></div>
+                </section>
+                <section id="system">
+                    <h1 data-localize-content="system"></h1>
+                    <hr>
+                    <div data-localize-content="system_desc"></div>
+                </section>
+                <section id="usage">
+                    <h1 data-localize-content="usage"></h1>
+                    <hr>
+                    <section id="screen">
+                        <h2 data-localize-content="screen"></h2>
+                        <img id="screen_image" data-localize-image-name="screen.JPG" hidden>
+                        <canvas id="screen_canvas"></canvas>
+                        <section id="menu_bar">
+                            <h3 data-localize-content="menu_bar"></h3>
+                            <canvas id="menu_bar_canvas"></canvas>
+                            <section id="file">
+                                <h4 data-localize-content="file"></h4>
+                                <section id="add_observers">
+                                    <h5 data-localize-content="add_observers"></h5>
+                                    <p data-localize-content="add_observers_desc"></p>
+                                </section>
+                                <section id="save_observers">
+                                    <h5 data-localize-content="save_observers"></h5>
+                                    <p data-localize-content="save_observers_desc"></p>
+                                </section>
+                                <section id="recent">
+                                    <h5 data-localize-content="recent"></h5>
+                                    <p data-localize-content="recent_desc"></p>
+                                </section>
+                                <section id="exit">
+                                    <h5 data-localize-content="exit"></h5>
+                                    <p data-localize-content="exit_desc"></p>
+                                </section>
+                            </section>
+                            <section id="tool">
+                                <h4 data-localize-content="tool"></h4>
+                                <section id="option">
+                                    <h5 data-localize-content="option"></h5>
+                                    <p data-localize-content="option_desc"></p>
+                                    <img data-localize-image-name="option.JPG">
+                                </section>
+                            </section>
+                            <section id="help">
+                                <h4 data-localize-content="help"></h4>
+                                <section id="manual">
+                                    <h5 data-localize-content="manual"></h5>
+                                    <p data-localize-content="manual_desc"></p>
+                                </section>
+                                <section id="about">
+                                    <h5 data-localize-content="about"></h5>
+                                    <p data-localize-content="about_desc"></p>
+                                    <img data-localize-image-name="about.JPG">
+                                </section>
+                            </section>
+                        </section>
+                        <section id="process">
+                            <h3 data-localize-content="process"></h3>
+                            <canvas id="process_canvas"></canvas>
+                            <section id="process_info">
+                                <h4 data-localize-content="process_info"></h4>
+                                <p data-localize-content="process_info_desc"></p>
+                                <canvas id="process_info_canvas"></canvas>
+                            </section>
+                            <section id="select_process">
+                                <h4 data-localize-content="select_process"></h4>
+                                <p data-localize-content="select_process_desc"></p>
+                                <canvas id="select_process_canvas"></canvas>
+                            </section>
+                        </section>
+                        <section id="manager_buttons">
+                            <h3 data-localize-content="manager_buttons"></h3>
+                            <canvas id="manager_buttons_canvas"></canvas>
+                            <section id="add">
+                                <h4 data-localize-content="add"></h4>
+                                <p data-localize-content="add_desc"></p>
+                            </section>
+                            <section id="remove">
+                                <h4 data-localize-content="remove"></h4>
+                                <p data-localize-content="remove_desc"></p>
+                            </section>
+                            <section id="start_all">
+                                <h4 data-localize-content="start_all"></h4>
+                                <p data-localize-content="start_all_desc"></p>
+                            </section>
+                            <section id="stop_all">
+                                <h4 data-localize-content="stop_all"></h4>
+                                <p data-localize-content="stop_all_desc"></p>
+                            </section>
+                            <section id="stop_speech">
+                                <h4 data-localize-content="stop_speech"></h4>
+                                <p data-localize-content="stop_speech_desc"></p>
+                            </section>
+                        </section>
+                        <section id="observer_list">
+                            <h3 data-localize-content="observer_list"></h3>
+                            <p data-localize-content="observer_list_desc"></p>
+                            <canvas id="observer_list_canvas"></canvas>
+                            <section id="start">
+                                <h4 data-localize-content="start"></h4>
+                                <canvas id="start_canvas"></canvas>
+                                <p data-localize-content="start_desc"></p>
+                            </section>
+                            <section id="stop">
+                                <h4 data-localize-content="stop"></h4>
+                                <canvas id="stop_canvas"></canvas>
+                                <p data-localize-content="stop_desc"></p>
+                            </section>
+                            <section id="speech_notification">
+                                <h4 data-localize-content="speech_notification"></h4>
+                                <canvas id="speech_notification_canvas"></canvas>
+                                <p data-localize-content="speech_notification_desc"></p>
+                            </section>
+                            <section id="title">
+                                <h4 data-localize-content="title"></h4>
+                                <canvas id="title_canvas"></canvas>
+                                <p data-localize-content="title_desc"></p>
+                            </section>
+                            <section id="address">
+                                <h4 data-localize-content="address"></h4>
+                                <canvas id="address_canvas"></canvas>
+                                <p data-localize-content="address_desc"></p>
+                            </section>
+                            <section id="value_type">
+                                <h4 data-localize-content="value_type"></h4>
+                                <canvas id="value_type_canvas"></canvas>
+                                <p data-localize-content="value_type_desc"></p>
+                            </section>
+                            <section id="read_size">
+                                <h4 data-localize-content="read_size"></h4>
+                                <canvas id="read_size_canvas"></canvas>
+                                <p data-localize-content="read_size_desc"></p>
+                            </section>
+                            <section id="update_interval">
+                                <h4 data-localize-content="update_interval"></h4>
+                                <canvas id="update_interval_canvas"></canvas>
+                                <p data-localize-content="update_interval_desc"></p>
+                            </section>
+                            <section id="log">
+                                <h4 data-localize-content="log"></h4>
+                                <canvas id="log_canvas"></canvas>
+                                <p data-localize-content="log_desc"></p>
+                            </section>
+                        </section>
+                    </section>
+                    <section id="procedure">
+                        <h2 data-localize-content="procedure"></h2>
+                        <ol>
+                            <li>
+                                <p data-localize-content="procedure_1_1"></p>
+                                <img data-localize-image-name="procedure_1_1.JPG">
+                                <p data-localize-content="procedure_1_2"></p>
+                                <img data-localize-image-name="procedure_1_2.JPG">
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_2"></p>
+                                <div><img data-localize-image-name="procedure_2.JPG"></div>
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_3"></p>
+                                <img data-localize-image-name="procedure_3.JPG">
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_4"></p>
+                                <div><img data-localize-image-name="procedure_4.JPG"></div>
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_5"></p>
+                                <div><img data-localize-image-name="procedure_5_1.JPG"></div>
+                                <div><img data-localize-image-name="procedure_5_2.JPG"></div>
+                            </li>
+                            <li>
+                                <p data-localize-content="procedure_6"></p>
+                                <div><img data-localize-image-name="procedure_6_1.JPG"></div>
+                                <div><img data-localize-image-name="procedure_6_2.JPG"></div>
+                            </li>
+                        </ol>
+                    </section>
+                </section>
+                <section id="contact">
+                    <h1 data-localize-content="contact"></h1>
+                    <hr>
+                    <ul>
+                        <li>E-mail: <a href="mailto:tkpphr@gmail.com">tkpphr@gmail.com</a></li>
+                        <li>Github: <a href="https://github.com/tkpphr/">https://github.com/tkpphr/</a></li>
+                    </ul>
+                </section>
+                <section id="license">
+                    <h1 data-localize-content="license"></h1>
+                    <hr>
+                    <div data-localize-content="license_desc"></div>
+                </section>
+                <div class="right-aligned-wrapper margin-rb">
+                    <a href="#overview" data-localize-content="top_to"></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <span>Copyright (c) 2018 tkpphr. All rights reserved.</span>
+        </footer>
+    </div>
+
+</body>
+</html>
