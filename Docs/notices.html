@@ -35,7 +35,11 @@
                     "libraries": "ライブラリ"
                 }
             };
-            document.title = "Process Memory Observer - " + contents[getLanguage()]["notices"];
+            if(contents[getLanguage()]){
+                document.title = "Screen Numeric Observer - " + contents[getLanguage()]["notices"];
+            }else{
+                document.title = "Screen Numeric Observer - " + contents["default"]["notices"];
+            }
             localizeContents(contents);
         });
     </script>

@@ -185,7 +185,11 @@
                                      <p>詳しくは<a href="notices.html">こちら</a>をご覧ください。</p>`
                 }
             };
-            document.title = "Screen Numeric Observer - " + contents[getLanguage()]["manual"];
+            if(contents[getLanguage()]){
+                document.title = "Screen Numeric Observer - " + contents[getLanguage()]["manual"];
+            }else{
+                document.title = "Screen Numeric Observer - " + contents["default"]["manual"];
+            }
             localizeContents(contents);
             localizeImages(["ja"]);
             document.getElementById("screen_image").addEventListener("load", function (e) {
